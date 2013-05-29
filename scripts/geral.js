@@ -1,10 +1,9 @@
 $(document).ready(function() {
 
-$('#login-fb').click(function(e){
-    e.preventDefault();
-
-    facebookApp.statusFacebook();
-});
+    $('#login-fb').click(function(e){
+        e.preventDefault();
+        facebookApp.statusFacebook();
+    });
 
 $("a.ajuda").click(
 function() {
@@ -436,7 +435,7 @@ var facebookApp = {
     statusFacebook: function(){
                 FB.getLoginStatus(function(response){
                     if(response.status === 'connected'){
-                        location.href = 'class/LoginSistema.php?user=$email';
+                        facebookApp.redirecionamento();
                     } else if (response.status === 'not_authorized'){
                         facebookApp.loginFacebook();// Não está autorizado
                     }else{
@@ -448,9 +447,15 @@ var facebookApp = {
     loginFacebook: function(){
             FB.login(function(response){
                 if(response.authResponse){
-                    location.href = 'class/LoginSistema.php?user=$email';
+                    facebookApp.redirecionamento();
                 }
             }, {scope: 'publish_stream, email'});
-        },    
-}
+        }, 
 
+    redirecionamento: function(){
+        FB.api('/me', function(userInfo) {
+            var emailDoCara = userInfo.email;
+            location.href = 'http://gntapps.com.br/calculadora-de-casamentos/class/LoginSistema.php?user='+emailDoCara;
+        });
+    }   
+}
