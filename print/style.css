@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+/*
+Theme Name: 
+Description: 
+Author: Skidun
+Author URI: http://www.skidun.com.br
+Version: 
+*/
+
+@import url("css/reset.css");
+@import url("css/fonts.css");
+
+/* ESTILOS GERAIS */
+.wrap{width:600px; height:100%; margin:0 auto; position:relative;}
+.hide{display:none;}
+
+#header{float:left; width:100%;}
+#header .wrap{}
+#header .wrap img.logo{margin:25px 0 0 45px; float:left;}
+#header .wrap .orcamento{float:left; width:290px; margin-top:25px; margin-left:45px;}
+#header .wrap .orcamento h2{font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px; color:#e37970; text-transform:uppercase; text-align:center; margin-bottom:13px; font-weight:bold;}
+#header .wrap .orcamento h3{font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px; color:#9c7a4d; text-transform:capitalize; text-align:justify; margin:7px 0;}
+#header .wrap .orcamento h3 span{color:#e37970; font-weight:bold;}
+#content{float:left; width:100%;}
+#content .wrap{}
+#content .wrap h3{float:left; margin:35px 0 0 43px; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px; color:#e37970; text-transform:uppercase; text-align:left; text-indent:10px; font-weight:bold;}
+#content .wrap h3 img{float:left; margin:3px 0 0 0;}
+
+
+#content .wrap table tr td{ font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:19px; color:#e4bf9d; text-align:center; text-transform:uppercase; vertical-align:middle;}
+#content .wrap table tr td.item{color:#9c7a4d; text-transform:none; font-weight:bold;}
+
+#content .wrap table{width:520px; padding:0 40px; border:1px dashed #e7ddd4; margin:28px auto;}
+#content .wrap table thead{border-bottom:none;}
+#content .wrap table tr{height:48px;}
+#content .wrap table tr.item{height:44px; vertical-align:middle; border-bottom:1px dashed #e7ddd4; border-top:1px dashed #e7ddd4}
+#content .wrap table tr.item td{font-weight:bold; color:#9c7a4d; text-transform:none;}
+#content .wrap table tr.sub-item{height:44px; vertical-align:middle;}
+#content .wrap table tr.sub-item td{font-weight:normal; color:#9c7a4d; text-transform:none; font-size:15px;}
+#content .wrap table tr.sub-item-fechado{height:44px; vertical-align:middle;}
+#content .wrap table tr.sub-item-fechado td{font-weight:normal; color:#e37970; text-transform:none; font-size:15px;}
+#content .wrap table tr.item-resolvido{height:44px; vertical-align:middle; border-bottom:1px dashed #e7ddd4; border-top:1px dashed #e7ddd4;}
+#content .wrap table tr.item-resolvido td{font-weight:bold; color:#e37970; text-transform:none; font-weight:bold;}
+
+#content .wrap .logo-footer{float:left; margin-left:40px; padding-bottom:15px;}
+#content .wrap .bt-imprimir{margin-left: 36px; margin-top: 10px;}
+
+/*border-bottom:1px dashed #e7ddd4;*/

@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'BreeRgRegular';
+    src: url('fonts/amaranth-webfont.eot');
+    src: url('fonts/amaranth-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/amaranth-webfont.woff') format('woff'),
+         url('fonts/amaranth-webfont.ttf') format('truetype'),
+         url('fonts/amaranth-webfont.svg#amaranthregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BreeLtLight';
+    src: url('fonts/amaranth-webfont.eot');
+    src: url('fonts/amaranth-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/amaranth-webfont.woff') format('woff'),
+         url('fonts/amaranth-webfont.ttf') format('truetype'),
+         url('fonts/amaranth-webfont.svg#amaranthregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+#header .boas-vindas-novo .data b{font-weight: normal;}
+b{font-weight: normal!important;}
+h1{font-weight: normal!important;}
+h2{font-weight: normal!important;}
+h3{font-weight: normal!important;}
+
+#sidebar .body ul.linha li.even{ background:#fff8ed; color:#9c7a4d;}
+#sidebar .body ul.linha li.even span.vazio{color: #9C7A4D;}
+#sidebar .body ul.linha li.even span.vazio a{color: #9C7A4D;}
+#sidebar .body ul.linha li span a{ color:#fff;}
+#sidebar .body ul.linha li.even span a{ color:#9c7a4d;}
+#sidebar .body ul.linha li:hover.even{ background-color:#f4eadb;}
+#sidebar .body ul.linha li span.item{ font-size:13px; float:left; width:100px;}
+#sidebar .body ul.linha li span.preco{ font-size:12px; float:left; margin-left:12px;}
+#sidebar .body ul.linha li{ color:#fff8ed;}
+#sidebar .body ul.linha li span.status{ float:right; width:13px; height:10px;}
+#sidebar .body ul.linha li span.fechado{ background:url(img/icones/fechado-amarelo.png) 0 0 no-repeat; margin-top:-5px; padding:5px;}
+#sidebar .body ul.linha li.even span.fechado{ background:url(img/icones/fechado-marrom.png) 0 0 no-repeat; margin-top:-5px; padding:5px;}
+#sidebar .body ul.linha li span.mais{ background:url(img/icones/mais-amarelo.png) 0 0 no-repeat; width:11px; height:17px;}
+#sidebar .body ul.linha li.even span.mais{ background-position:0 -34px;}
+
+table.TabelaConjunto th {font-weight: normal!important;}
+table.TabelaConjunto td {font-weight: normal!important;}
+table.TabelaConjunto span {font-weight: normal!important;}
