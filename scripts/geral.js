@@ -1,5 +1,11 @@
 $(document).ready(function() {
 
+$('#login-fb').click(function(e){
+    e.preventDefault();
+
+    facebookApp.statusFacebook();
+});
+
 $("a.ajuda").click(
 function() {
 	$('.tapume').show();
@@ -424,3 +430,27 @@ $(function() {
         });
     }
 });
+
+var facebookApp = {
+
+    statusFacebook: function(){
+                FB.getLoginStatus(function(response){
+                    if(response.status === 'connected'){
+                        location.href = 'class/LoginSistema.php?user=$email';
+                    } else if (response.status === 'not_authorized'){
+                        facebookApp.loginFacebook();// Não está autorizado
+                    }else{
+                        facebookApp.loginFacebook();
+                    }
+                });
+        },
+
+    loginFacebook: function(){
+            FB.login(function(response){
+                if(response.authResponse){
+                    location.href = 'class/LoginSistema.php?user=$email';
+                }
+            }, {scope: 'publish_stream, email'});
+        },    
+}
+
