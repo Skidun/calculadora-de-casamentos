@@ -3,6 +3,7 @@ $(document).ready(function() {
     $('#login-fb').click(function(e){
         e.preventDefault();
         facebookApp.statusFacebook();
+        return false;
     });
 
 $("a.ajuda").click(
@@ -455,7 +456,11 @@ var facebookApp = {
     redirecionamento: function(){
         FB.api('/me', function(userInfo) {
             var emailDoCara = userInfo.email;
-            location.href = 'http://gntapps.com.br/calculadora-de-casamentos/class/LoginSistema.php?user='+emailDoCara;
+            var redirectUrl = 'http://gntapps.com.br/calculadora-de-casamentos/class/LoginSistema.php?user=';
+            var urlMaldita = redirectUrl+emailDoCara;
+            window.location.href = urlMaldita;
         });
-    }   
+    }
+
+
 }
