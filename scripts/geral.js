@@ -1,9 +1,41 @@
+var facebookApp = {
+
+    statusFacebook: function(){
+                FB.getLoginStatus(function(response){
+                    if(response.status === 'connected'){
+                        facebookApp.redirecionamento();
+                    } else if (response.status === 'not_authorized'){
+                        facebookApp.loginFacebook();// Não está autorizado
+                    }else{
+                        facebookApp.loginFacebook();
+                    }
+                });
+        },
+
+    loginFacebook: function(){
+            FB.login(function(response){
+                if(response.authResponse){
+                    facebookApp.redirecionamento();
+                }
+            }, {scope: 'publish_stream, email'});
+        }, 
+
+    redirecionamento: function(){
+        FB.api('/me', function(userInfo) {
+            var emailDoCara = userInfo.email;
+            var redirectUrl = 'http://gntapps.com.br/calculadora-de-casamentos/class/LoginSistema.php?user=';
+            var urlMaldita = redirectUrl+emailDoCara;
+            window.location.href = urlMaldita;
+        });
+    }
+}
+
 $(document).ready(function() {
 
     $('#login-fb').click(function(e){
         e.preventDefault();
         facebookApp.statusFacebook();
-        return false;
+        //return false;
     });
 
 $("a.ajuda").click(
@@ -430,37 +462,3 @@ $(function() {
         });
     }
 });
-
-var facebookApp = {
-
-    statusFacebook: function(){
-                FB.getLoginStatus(function(response){
-                    if(response.status === 'connected'){
-                        facebookApp.redirecionamento();
-                    } else if (response.status === 'not_authorized'){
-                        facebookApp.loginFacebook();// Não está autorizado
-                    }else{
-                        facebookApp.loginFacebook();
-                    }
-                });
-        },
-
-    loginFacebook: function(){
-            FB.login(function(response){
-                if(response.authResponse){
-                    facebookApp.redirecionamento();
-                }
-            }, {scope: 'publish_stream, email'});
-        }, 
-
-    redirecionamento: function(){
-        FB.api('/me', function(userInfo) {
-            var emailDoCara = userInfo.email;
-            var redirectUrl = 'http://gntapps.com.br/calculadora-de-casamentos/class/LoginSistema.php?user=';
-            var urlMaldita = redirectUrl+emailDoCara;
-            window.location.href = urlMaldita;
-        });
-    }
-
-
-}
