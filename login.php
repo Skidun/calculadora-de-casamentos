@@ -72,7 +72,7 @@ pe="image/x-icon">
             <div id="capa">
                 <div class="titulo"><img src="img/backgrounds/titulo.png" /></div>
                 <form action="login_facebook.php" method="post" target="_self">
-                <input type="submit" rel="facebox" name="login-fb" id="login-fb" class="fb-login" value="" />
+                <input type="submit" rel="facebox" name="login-fb" id="login-fb" class="fb-login" value="" onclick="return false;" />
                 </form>
 				<div class="editoria"><a href="http://gnt.globo.com/noivas/" target="_blank" title="Clique e veja a editoria de noivas">Clique</a> e veja a editoria de noivas</div>
             </div>
