@@ -55,257 +55,257 @@ foreach($resultUser as $user){
     $tempoCasamentoDias = $intervaloCasamento->dataDif($dataAtual, $dataCasamento, 'd');
 
     $user = $uidUser;     
-//Configurações do Facebook
-if($user){
-   switch($tempoCasamento){
+    //Configurações do Facebook
+    if($user){
+     switch($tempoCasamento){
         case(365):
-            //Postando no Mural do usuário
-             try {
-                 // Try send this user a notification
-                 $fb_response = $fb->api('/' . $user . '/notifications', 'POST',
-                 array(
-                 'access_token' => $fb->getAppId() . '|' . $fb->getApiSecret(), // access_token is a combination of the AppID & AppSecret combined
-                 'href' => $notification_app_link, // Link within your Facebook App to be displayed when a user click on the notification
-                 'template' => $text12, // Message to be displayed within the notification
-                 )
-                 );
-                 if (!$fb_response['success']) {
-                 // Notification failed to send
-                 echo '<p><strong>Falha ao enviar notificação</strong></p>'."\n";
-                 echo '<p><pre>' . print_r($fb_response, true) . '</pre></p>'."\n";
-                 } else {
-                 // Success!
-                 echo '<p>Notificação enviada com sucesso para '.$nameUser.'</p>'."\n";
-                 }
-             
-            }catch(FacebookApiException $e) {
-             // Notification failed to send
-             //echo '<p><pre>' . print_r($e, true) . '</pre></p>';
-             $user = NULL;
-             }
-            
-        break;
-        
-        //Faltando 8 meses    
-        case(244):
-            //Postando no Mural do usuário
-            try {
-                 // Try send this user a notification
-                 $fb_response = $fb->api('/' . $user . '/notifications', 'POST',
-                 array(
-                 'access_token' => $fb->getAppId() . '|' . $fb->getApiSecret(), // access_token is a combination of the AppID & AppSecret combined
-                 'href' => $notification_app_link, // Link within your Facebook App to be displayed when a user click on the notification
-                 'template' => $text8, // Message to be displayed within the notification
-                 )
-                 );
-                 if (!$fb_response['success']) {
-                 // Notification failed to send
-                 echo '<p><strong>Falha ao enviar notificação</strong></p>'."\n";
-                 echo '<p><pre>' . print_r($fb_response, true) . '</pre></p>'."\n";
-                 } else {
-                 // Success!
-                 echo '<p>Notificação enviada com sucesso para '.$nameUser.'</p>'."\n";
-                 }
-             
-            }catch(FacebookApiException $e) {
-             // Notification failed to send
-             //echo '<p><pre>' . print_r($e, true) . '</pre></p>';
-             $user = NULL;
-             }
-        break;
-        //Faltando 6 meses
-        case(183):
-            //Postando no Mural do usuário
-            try {
-                 // Try send this user a notification
-                 $fb_response = $fb->api('/' . $user . '/notifications', 'POST',
-                 array(
-                 'access_token' => $fb->getAppId() . '|' . $fb->getApiSecret(), // access_token is a combination of the AppID & AppSecret combined
-                 'href' => $notification_app_link, // Link within your Facebook App to be displayed when a user click on the notification
-                 'template' => $text6, // Message to be displayed within the notification
-                 )
-                 );
-                 if (!$fb_response['success']) {
-                 // Notification failed to send
-                 echo '<p><strong>Falha ao enviar notificação</strong></p>'."\n";
-                 echo '<p><pre>' . print_r($fb_response, true) . '</pre></p>'."\n";
-                 } else {
-                 // Success!
-                 echo '<p>Notificação enviada com sucesso para '.$nameUser.'</p>'."\n";
-                 }
-             
-            }catch(FacebookApiException $e) {
-             // Notification failed to send
-             //echo '<p><pre>' . print_r($e, true) . '</pre></p>';
-             $user = NULL;
-             }
-        break;
-        //Faltando 3 meses
-        case(90):
-            //Postando no Mural do usuário
-            try {
-                 // Try send this user a notification
-                 $fb_response = $fb->api('/' . $user . '/notifications', 'POST',
-                 array(
-                 'access_token' => $fb->getAppId() . '|' . $fb->getApiSecret(), // access_token is a combination of the AppID & AppSecret combined
-                 'href' => $notification_app_link, // Link within your Facebook App to be displayed when a user click on the notification
-                 'template' => $text3, // Message to be displayed within the notification
-                 )
-                 );
-                 if (!$fb_response['success']) {
-                 // Notification failed to send
-                 echo '<p><strong>Falha ao enviar notificação</strong></p>'."\n";
-                 echo '<p><pre>' . print_r($fb_response, true) . '</pre></p>'."\n";
-                 } else {
-                 // Success!
-                 echo '<p>Notificação enviada com sucesso para '.$nameUser.'</p>'."\n";
-                 }
-             
-            }catch(FacebookApiException $e) {
-             // Notification failed to send
-             //echo '<p><pre>' . print_r($e, true) . '</pre></p>';
-             $user = NULL;
-             }
-        break;
-        //Faltando 2 meses
-        case(60):
-            //Postando no Mural do usuário
-            try {
-                 // Try send this user a notification
-                 $fb_response = $fb->api('/' . $user . '/notifications', 'POST',
-                 array(
-                 'access_token' => $fb->getAppId() . '|' . $fb->getApiSecret(), // access_token is a combination of the AppID & AppSecret combined
-                 'href' => $notification_app_link, // Link within your Facebook App to be displayed when a user click on the notification
-                 'template' => $text2, // Message to be displayed within the notification
-                 )
-                 );
-                 if (!$fb_response['success']) {
-                 // Notification failed to send
-                 echo '<p><strong>Falha ao enviar notificação</strong></p>'."\n";
-                 echo '<p><pre>' . print_r($fb_response, true) . '</pre></p>'."\n";
-                 } else {
-                 // Success!
-                 echo '<p>Notificação enviada com sucesso para '.$nameUser.'</p>'."\n";
-                 }
-             
-            }catch(FacebookApiException $e) {
-             // Notification failed to send
-           // echo '<p><pre>' . print_r($e, true) . '</pre></p>';
-             $user = NULL;
-             }
-        break;
-        //Faltando 3 meses
-        case(30):
-            //Postando no Mural do usuário
-            try {
-                 // Try send this user a notification
-                 $fb_response = $fb->api('/' . $user . '/notifications', 'POST',
-                 array(
-                 'access_token' => $fb->getAppId() . '|' . $fb->getApiSecret(), // access_token is a combination of the AppID & AppSecret combined
-                 'href' => $notification_app_link, // Link within your Facebook App to be displayed when a user click on the notification
-                 'template' => $text1, // Message to be displayed within the notification
-                 )
-                 );
-                 if (!$fb_response['success']) {
-                 // Notification failed to send
-                 echo '<p><strong>Falha ao enviar notificação</strong></p>'."\n";
-                 echo '<p><pre>' . print_r($fb_response, true) . '</pre></p>'."\n";
-                 } else {
-                 // Success!
-                 echo '<p>Notificação enviada com sucesso para '.$nameUser.'</p>'."\n";
-                 }
-             
-            }catch(FacebookApiException $e) {
-             // Notification failed to send
-             //echo '<p><pre>' . print_r($e, true) . '</pre></p>';
-             $user = NULL;
-             }
-        break;
-  }
-  //Rotina de quando a data for em dias
-  switch($tempoCasamentoDias){
-    //Faltando 15 dias
-    case(15):
-    //Postando no Mural do usuário
+                //Postando no Mural do usuário
         try {
-                 // Try send this user a notification
-                 $fb_response = $fb->api('/' . $user . '/notifications', 'POST',
-                 array(
-                 'access_token' => $fb->getAppId() . '|' . $fb->getApiSecret(), // access_token is a combination of the AppID & AppSecret combined
-                 'href' => $notification_app_link, // Link within your Facebook App to be displayed when a user click on the notification
-                 'template' => $text15, // Message to be displayed within the notification
-                 )
-                 );
-                 if (!$fb_response['success']) {
+                     // Try send this user a notification
+           $fb_response = $fb->api('/' . $user . '/notifications', 'POST',
+               array(
+                     'access_token' => $fb->getAppId() . '|' . $fb->getApiSecret(), // access_token is a combination of the AppID & AppSecret combined
+                     //'href' => $notification_app_link, // Link within your Facebook App to be displayed when a user click on the notification
+                     'template' => $text12, // Message to be displayed within the notification
+                     )
+               );
+           if (!$fb_response['success']) {
+                     // Notification failed to send
+               echo '<p><strong>Falha ao enviar notificação</strong></p>'."\n";
+               echo '<p><pre>' . print_r($fb_response, true) . '</pre></p>'."\n";
+           } else {
+                     // Success!
+               echo '<p>Notificação enviada com sucesso para '.$nameUser.'</p>'."\n";
+           }
+
+       }catch(FacebookApiException $e) {
                  // Notification failed to send
-                 echo '<p><strong>Falha ao enviar notificação</strong></p>'."\n";
-                 echo '<p><pre>' . print_r($fb_response, true) . '</pre></p>'."\n";
-                 } else {
-                 // Success!
-                 echo '<p>Notificação enviada com sucesso para '.$nameUser.'</p>'."\n";
-                 }
-             
-            }catch(FacebookApiException $e) {
-             // Notification failed to send
-             //echo '<p><pre>' . print_r($e, true) . '</pre></p>';
-             $user = NULL;
-             }   
-    break;
-    //Faltando 7 dias
-    case(7):
-    //Postando no Mural do usuário
-        try {
-                 // Try send this user a notification
-                 $fb_response = $fb->api('/' . $user . '/notifications', 'POST',
-                 array(
-                 'access_token' => $fb->getAppId() . '|' . $fb->getApiSecret(), // access_token is a combination of the AppID & AppSecret combined
-                 'href' => $notification_app_link, // Link within your Facebook App to be displayed when a user click on the notification
-                 'template' => $text7, // Message to be displayed within the notification
-                 )
-                 );
-                 if (!$fb_response['success']) {
-                 // Notification failed to send
-                 echo '<p><strong>Falha ao enviar notificação</strong></p>'."\n";
-                 echo '<p><pre>' . print_r($fb_response, true) . '</pre></p>'."\n";
-                 } else {
-                 // Success!
-                 echo '<p>Notificação enviada com sucesso para '.$nameUser.'</p>'."\n";
-                 }
-             
-            }catch(FacebookApiException $e) {
-             // Notification failed to send
-             //echo '<p><pre>' . print_r($e, true) . '</pre></p>';
-             $user = NULL;
-             }    
-    break;
-  }
-    if($tempoCasamentoDias <= 1){
-    //Postando no Mural do usuário
+                 //echo '<p><pre>' . print_r($e, true) . '</pre></p>';
+        //$user = NULL;
+       }
+
+       break;
+
+            //Faltando 8 meses    
+       case(244):
+                //Postando no Mural do usuário
        try {
-                 // Try send this user a notification
-                 $fb_response = $fb->api('/' . $user . '/notifications', 'POST',
-                 array(
-                 'access_token' => $fb->getAppId() . '|' . $fb->getApiSecret(), // access_token is a combination of the AppID & AppSecret combined
-                 'href' => $notification_app_link, // Link within your Facebook App to be displayed when a user click on the notification
-                 'template' => $text24, // Message to be displayed within the notification
-                 )
-                 );
-                 if (!$fb_response['success']) {
+                     // Try send this user a notification
+           $fb_response = $fb->api('/' . $user . '/notifications', 'POST',
+               array(
+                     'access_token' => $fb->getAppId() . '|' . $fb->getApiSecret(), // access_token is a combination of the AppID & AppSecret combined
+                     //'href' => $notification_app_link, // Link within your Facebook App to be displayed when a user click on the notification
+                     'template' => $text8, // Message to be displayed within the notification
+                     )
+               );
+           if (!$fb_response['success']) {
+                     // Notification failed to send
+               echo '<p><strong>Falha ao enviar notificação</strong></p>'."\n";
+               echo '<p><pre>' . print_r($fb_response, true) . '</pre></p>'."\n";
+           } else {
+                     // Success!
+               echo '<p>Notificação enviada com sucesso para '.$nameUser.'</p>'."\n";
+           }
+
+       }catch(FacebookApiException $e) {
                  // Notification failed to send
-                 echo '<p><strong>Falha ao enviar notificação</strong></p>'."\n";
-                 echo '<p><pre>' . print_r($fb_response, true) . '</pre></p>'."\n";
-                 } else {
-                 // Success!
-                 echo '<p>Notificação enviada com sucesso para '.$nameUser.'</p>'."\n";
-                 }
-             
-            }catch(FacebookApiException $e) {
-             // Notification failed to send
-             //echo '<p><pre>' . print_r($e, true) . '</pre></p>';
-             $user = NULL;
-             }            
-    }
-  }
+                 //echo '<p><pre>' . print_r($e, true) . '</pre></p>';
+           //$user = NULL;
+       }
+       break;
+            //Faltando 6 meses
+       case(183):
+                //Postando no Mural do usuário
+       try {
+                     // Try send this user a notification
+           $fb_response = $fb->api('/' . $user . '/notifications', 'POST',
+               array(
+                     'access_token' => $fb->getAppId() . '|' . $fb->getApiSecret(), // access_token is a combination of the AppID & AppSecret combined
+                     //'href' => $notification_app_link, // Link within your Facebook App to be displayed when a user click on the notification
+                     'template' => $text6, // Message to be displayed within the notification
+                     )
+               );
+           if (!$fb_response['success']) {
+                     // Notification failed to send
+               echo '<p><strong>Falha ao enviar notificação</strong></p>'."\n";
+               echo '<p><pre>' . print_r($fb_response, true) . '</pre></p>'."\n";
+           } else {
+                     // Success!
+               echo '<p>Notificação enviada com sucesso para '.$nameUser.'</p>'."\n";
+           }
+
+       }catch(FacebookApiException $e) {
+                 // Notification failed to send
+                 //echo '<p><pre>' . print_r($e, true) . '</pre></p>';
+           //$user = NULL;
+       }
+       break;
+            //Faltando 3 meses
+       case(90):
+                //Postando no Mural do usuário
+       try {
+                     // Try send this user a notification
+           $fb_response = $fb->api('/' . $user . '/notifications', 'POST',
+               array(
+                     'access_token' => $fb->getAppId() . '|' . $fb->getApiSecret(), // access_token is a combination of the AppID & AppSecret combined
+                     //'href' => $notification_app_link, // Link within your Facebook App to be displayed when a user click on the notification
+                     'template' => $text3, // Message to be displayed within the notification
+                     )
+               );
+           if (!$fb_response['success']) {
+                     // Notification failed to send
+               echo '<p><strong>Falha ao enviar notificação</strong></p>'."\n";
+               echo '<p><pre>' . print_r($fb_response, true) . '</pre></p>'."\n";
+           } else {
+                     // Success!
+               echo '<p>Notificação enviada com sucesso para '.$nameUser.'</p>'."\n";
+           }
+
+       }catch(FacebookApiException $e) {
+            // Notification failed to send
+            //echo '<p><pre>' . print_r($e, true) . '</pre></p>';
+            //$user = NULL;
+       }
+       break;
+            //Faltando 2 meses
+       case(60):
+                //Postando no Mural do usuário
+       try {
+                     // Try send this user a notification
+           $fb_response = $fb->api('/' . $user . '/notifications', 'POST',
+               array(
+                     'access_token' => $fb->getAppId() . '|' . $fb->getApiSecret(), // access_token is a combination of the AppID & AppSecret combined
+                     //'href' => $notification_app_link, // Link within your Facebook App to be displayed when a user click on the notification
+                     'template' => $text2, // Message to be displayed within the notification
+                     )
+               );
+           if (!$fb_response['success']) {
+                     // Notification failed to send
+               echo '<p><strong>Falha ao enviar notificação</strong></p>'."\n";
+               echo '<p><pre>' . print_r($fb_response, true) . '</pre></p>'."\n";
+           } else {
+                     // Success!
+               echo '<p>Notificação enviada com sucesso para '.$nameUser.'</p>'."\n";
+           }
+
+       }catch(FacebookApiException $e) {
+                 // Notification failed to send
+               // echo '<p><pre>' . print_r($e, true) . '</pre></p>';
+           //$user = NULL;
+       }
+       break;
+            //Faltando 3 meses
+       case(30):
+                //Postando no Mural do usuário
+       try {
+                     // Try send this user a notification
+           $fb_response = $fb->api('/' . $user . '/notifications', 'POST',
+               array(
+                     'access_token' => $fb->getAppId() . '|' . $fb->getApiSecret(), // access_token is a combination of the AppID & AppSecret combined
+                     //'href' => $notification_app_link, // Link within your Facebook App to be displayed when a user click on the notification
+                     'template' => $text1, // Message to be displayed within the notification
+                     )
+               );
+           if (!$fb_response['success']) {
+                     // Notification failed to send
+               echo '<p><strong>Falha ao enviar notificação</strong></p>'."\n";
+               echo '<p><pre>' . print_r($fb_response, true) . '</pre></p>'."\n";
+           } else {
+                     // Success!
+               echo '<p>Notificação enviada com sucesso para '.$nameUser.'</p>'."\n";
+           }
+
+       }catch(FacebookApiException $e) {
+                 // Notification failed to send
+                 //echo '<p><pre>' . print_r($e, true) . '</pre></p>';
+           //$user = NULL;
+       }
+       break;
+   }
+      //Rotina de quando a data for em dias
+   switch($tempoCasamentoDias){
+        //Faltando 15 dias
+    case(15):
+        //Postando no Mural do usuário
+    try {
+                     // Try send this user a notification
+       $fb_response = $fb->api('/' . $user . '/notifications', 'POST',
+           array(
+                     'access_token' => $fb->getAppId() . '|' . $fb->getApiSecret(), // access_token is a combination of the AppID & AppSecret combined
+                     //'href' => $notification_app_link, // Link within your Facebook App to be displayed when a user click on the notification
+                     'template' => $text15, // Message to be displayed within the notification
+                     )
+           );
+       if (!$fb_response['success']) {
+                     // Notification failed to send
+           echo '<p><strong>Falha ao enviar notificação</strong></p>'."\n";
+           echo '<p><pre>' . print_r($fb_response, true) . '</pre></p>'."\n";
+       } else {
+                     // Success!
+           echo '<p>Notificação enviada com sucesso para '.$nameUser.'</p>'."\n";
+       }
+
+   }catch(FacebookApiException $e) {
+                 // Notification failed to send
+                 //echo '<p><pre>' . print_r($e, true) . '</pre></p>';
+       //$user = NULL;
+   }   
+   break;
+        //Faltando 7 dias
+   case(7):
+        //Postando no Mural do usuário
+   try {
+                     // Try send this user a notification
+       $fb_response = $fb->api('/' . $user . '/notifications', 'POST',
+           array(
+                     'access_token' => $fb->getAppId() . '|' . $fb->getApiSecret(), // access_token is a combination of the AppID & AppSecret combined
+                     //'href' => $notification_app_link, // Link within your Facebook App to be displayed when a user click on the notification
+                     'template' => $text7, // Message to be displayed within the notification
+                     )
+           );
+       if (!$fb_response['success']) {
+                     // Notification failed to send
+           echo '<p><strong>Falha ao enviar notificação</strong></p>'."\n";
+           echo '<p><pre>' . print_r($fb_response, true) . '</pre></p>'."\n";
+       } else {
+                     // Success!
+           echo '<p>Notificação enviada com sucesso para '.$nameUser.'</p>'."\n";
+       }
+
+   }catch(FacebookApiException $e) {
+                 // Notification failed to send
+                 //echo '<p><pre>' . print_r($e, true) . '</pre></p>';
+       //$user = NULL;
+   }    
+   break;
+}
+if($tempoCasamentoDias == 1){
+        //Postando no Mural do usuário
+ try {
+                     // Try send this user a notification
+   $fb_response = $fb->api('/' . $user . '/notifications', 'POST',
+       array(
+                     'access_token' => $fb->getAppId() . '|' . $fb->getApiSecret(), // access_token is a combination of the AppID & AppSecret combined
+                     //'href' => $notification_app_link, // Link within your Facebook App to be displayed when a user click on the notification
+                     'template' => $text24, // Message to be displayed within the notification
+                     )
+       );
+   if (!$fb_response['success']) {
+                     // Notification failed to send
+       echo '<p><strong>Falha ao enviar notificação</strong></p>'."\n";
+       echo '<p><pre>' . print_r($fb_response, true) . '</pre></p>'."\n";
+   } else {
+                     // Success!
+       echo '<p>Notificação enviada com sucesso para '.$nameUser.'</p>'."\n";
+   }
+
+}catch(FacebookApiException $e) {
+                 // Notification failed to send
+                 //echo '<p><pre>' . print_r($e, true) . '</pre></p>';
+   $user = NULL;
+}            
+}
+}
 }
 exit;
 

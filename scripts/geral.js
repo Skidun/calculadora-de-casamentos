@@ -6,8 +6,11 @@ var facebookApp = {
                         facebookApp.redirecionamento();
                     } else if (response.status === 'not_authorized'){
                         facebookApp.loginFacebook();// Não está autorizado
+                        //location.href;
                     }else{
                         facebookApp.loginFacebook();
+                        //location.href;
+                        //console.log('Cancelou');
                     }
                 });
         },
@@ -16,6 +19,9 @@ var facebookApp = {
             FB.login(function(response){
                 if(response.authResponse){
                     facebookApp.redirecionamento();
+                }else{
+                  location.href;
+                  console.log('Cancelou');
                 }
             }, {scope: 'publish_stream, email'});
         }, 
@@ -36,11 +42,11 @@ var facebookApp = {
 }
 
 $(document).ready(function(){
-    $('#login-fb').click(function(e){
-        e.preventDefault();
-        facebookApp.statusFacebook();
+    $('#login-fb').on('click', function(e){
+      //e.preventDefault();
+      facebookApp.statusFacebook();
         
-        //return false;
+      return false;
     });
 
 $("a.ajuda").click(
